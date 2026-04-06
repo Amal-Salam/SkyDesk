@@ -1,0 +1,24 @@
+# ============================================================
+# NASCAV RAG Backend — Development & Testing Dependencies
+# Install with: pip install -r requirements-dev.txt
+# ============================================================
+
+-r requirements.txt                # include all production deps
+
+# --- Testing ---
+pytest==8.2.2
+pytest-asyncio==0.23.7             # async test support
+pytest-cov==5.0.0                  # code coverage reports
+pytest-mock==3.14.0                # mock/patch helpers
+httpx==0.27.0                      # test client for FastAPI (already in prod)
+respx==0.21.1                      # mock httpx requests in tests
+factory-boy==3.3.0                 # test data factories
+
+# --- Code Quality ---
+ruff==0.4.9                        # fast linter + formatter (replaces flake8, black, isort)
+mypy==1.10.1                       # static type checking
+pre-commit==3.7.1                  # git hooks for linting
+
+# --- Security Scanning ---
+bandit==1.7.9                      # static security analysis
+safety==3.2.3                      # dependency vulnerability scanning

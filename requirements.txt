@@ -1,1 +1,44 @@
-new file
+# ============================================================
+# NASCAV RAG Backend — Production Dependencies
+# ============================================================
+
+# --- Web Framework ---
+fastapi==0.111.0
+uvicorn[standard]==0.30.1          # ASGI server with websocket support
+
+# --- Supabase ---
+supabase==2.5.0                    # Supabase Python client
+postgrest==0.16.9                  # PostgREST client (used internally by supabase)
+
+# --- Google Gemini ---
+google-generativeai==0.7.2         # Gemini embeddings + generation
+
+# --- Document Parsing ---
+pymupdf==1.24.5                    # PDF parsing (fitz) — fast and accurate
+python-docx==1.1.2                 # DOCX parsing
+httpx==0.27.0                      # Async HTTP client (Google Docs export + API calls)
+
+# --- Text Processing ---
+tiktoken==0.7.0                    # OpenAI tokenizer — accurate token counting
+langdetect==1.0.9                  # Detect document language
+
+# --- Data Validation ---
+pydantic==2.7.4                    # Request/response models
+pydantic-settings==2.3.4           # Settings from environment variables
+
+# --- Security ---
+slowapi==0.1.9                     # Rate limiting for FastAPI
+python-jose[cryptography]==3.3.0   # JWT verification
+bleach==6.1.0                      # HTML sanitization
+python-multipart==0.0.9            # File upload support
+
+# --- Monitoring & Logging ---
+structlog==24.2.0                  # Structured JSON logging (SOC-2 requirement)
+sentry-sdk[fastapi]==2.6.0         # Error tracking (free tier)
+
+# --- Utilities ---
+tenacity==8.3.0                    # Retry logic with exponential backoff
+python-dotenv==1.0.1               # .env file support
+
+# --- CORS ---
+# Included in FastAPI/Starlette, no extra package needed
